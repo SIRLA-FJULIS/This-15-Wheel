@@ -62,6 +62,13 @@
           }
         ];
 
+        function shuffle(array){
+          for(let i = array.length - 1; i > 0; i--){
+            let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+          }
+        }
+        shuffle(data);
         var $wrap = $(this);
         var $btnStart = $wrap.find("#btn-start");
         var $roulette = $wrap.find(".roulette");
