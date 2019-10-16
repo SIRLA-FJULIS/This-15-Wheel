@@ -5,7 +5,7 @@
 
       var defaults = {
         angle: 0,
-        angleOffset: -45,
+        angleOffset: 0,
         speed: 5000,
         easing: "easeInOutElastic",
       };
@@ -69,6 +69,7 @@
           }
         }
         shuffle(data);
+
         var $wrap = $(this);
         var $btnStart = $wrap.find("#btn-start");
         var $roulette = $wrap.find(".roulette");
@@ -86,7 +87,11 @@
 
         for (i = 1; i <= itemSize; i += 1) {
           var idx = i - 1;
-          var rt = i * d + angleOffset;
+          var rt = idx * d + angleOffset;
+
+          /* Give every data an angle range */
+          data[idx].angle_range = [rt, rt + d];
+
           var itemHTML = $('<div class="' + itemSelector + '">');
           var labelHTML = '';
               labelHTML += '<p class="' + labelSelector + '">';
@@ -134,9 +139,13 @@
             center: ["50%", "50%"],
             easing: $.easing.esing,
             callback: function() {
-              var currentA = $(this).getRotateAngle();
-
-              console.log(currentA);
+              var currentA = $(this).getRotateAngle() % 360;
+              for(d of data){
+                if(360 - currentA > d.angle_range[0] && 360 - currentA < d.angle_range[1]){
+                  $("#result").text(`恭喜${d.text}，您已被幸運SIRLA喵造訪!`);
+                  break;
+                }
+              }
 
             },
             duration: speed
