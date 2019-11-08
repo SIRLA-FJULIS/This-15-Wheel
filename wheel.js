@@ -42,7 +42,7 @@
           },
           {
             color: '#f7a416',
-            text: '🍐'
+            text: 'UR🍐'
           },
           {
             color: '#e6471d',
