@@ -53,10 +53,6 @@
             text: '琪雅'
           },
           {
-            color: '#e5177b',
-            text: 'where'
-          },
-          {
             color: '#be107f',
             text: '🐟'
           }
