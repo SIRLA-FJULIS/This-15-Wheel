@@ -1,4 +1,60 @@
 (function($) {
+  var data = [
+    {
+      color: '#3f297e',
+      text: '夜貓'
+    },
+    {
+      color: '#1d61ac',
+      text: '土豆'
+    },
+    {
+      color: '#169ed8',
+      text: '統神'
+    },
+    {
+      color: '#209b6c',
+      text: 'arashi'
+    },
+    {
+      color: '#60b236',
+      text: 'Yan'
+    },
+    {
+      color: '#efe61f',
+      text: '叔叔'
+    },
+    {
+      color: '#f7a416',
+      text: 'UR🍐'
+    },
+    {
+      color: '#e6471d',
+      text: '許羊'
+    },
+    {
+      color: '#dc0936',
+      text: '琪雅'
+    },
+    {
+      color: '#be107f',
+      text: '🐟'
+    }
+  ];
+  for ([id, d] of data.entries()) {
+    $('#name-list').append(`<li class="name">
+                              <button type="button" class="btn-a" id="name-${id}">${d.text}</button>
+                            </li>`
+                          );
+  }
+
+  $('.btn-a').on("click", function(e) {
+    let target_name = $(`#${e.target.id}`)[0].innerText;
+    data = data.filter(d => d.text !== target_name);
+    $('#roulette').empty();
+    $('.box-roulette').roulette();
+  });
+
   $.fn.extend({
 
     roulette: function(options) {
@@ -14,49 +70,6 @@
 
       return this.each(function() {
         var o = opt;
-
-        var data = [
-					{
-            color: '#3f297e',
-            text: '夜貓'
-          },
-          {
-            color: '#1d61ac',
-            text: '土豆'
-          },
-          {
-            color: '#169ed8',
-            text: '統神'
-          },
-          {
-            color: '#209b6c',
-            text: 'arashi'
-          },
-          {
-            color: '#60b236',
-            text: 'Yan'
-          },
-          {
-            color: '#efe61f',
-            text: '叔叔'
-          },
-          {
-            color: '#f7a416',
-            text: 'UR🍐'
-          },
-          {
-            color: '#e6471d',
-            text: '許羊'
-          },
-          {
-            color: '#dc0936',
-            text: '琪雅'
-          },
-          {
-            color: '#be107f',
-            text: '🐟'
-          }
-        ];
 
         function shuffle(array){
           for(let i = array.length - 1; i > 0; i--){
@@ -110,7 +123,7 @@
           $roulette.children("." + itemSelector).eq(idx).children("." + labelSelector).css({
             //"height": textH + 'px',
             //"line-height": textH + 'px',
-            "transform": 'translateX(' + (textH * 1.3) + 'px) translateY(' + (wrapW * -.3) + 'px) rotateZ(' + (90 + d * .5) + 'deg)'
+            "transform": 'translateX(' + (textH * (1.3 + 0.23 * (10 - data.length))) + 'px) translateY(' + (wrapW * -.3) + 'px) rotateZ(' + (90 + d * .5) + 'deg)'
           });
 
         }
@@ -158,7 +171,5 @@
 })(jQuery);
 
 $(function() {
-
   $('.box-roulette').roulette();
-
 });
