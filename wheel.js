@@ -1,7 +1,7 @@
 (function($) {
   $.fn.extend({
 
-    roulette: function(options) {
+    roulette: function(count, options) {
 
       var defaults = {
         angle: 0,
@@ -18,7 +18,7 @@
         var data = [
 					{
             color: '#3f297e',
-            text: '夜貓'
+            text: '夜猫'
           },
           {
             color: '#1d61ac',
@@ -58,6 +58,14 @@
           }
         ];
 
+        for(let c in count){
+          for(let d of data){
+            if(d.text === c) {
+              d.count = count[c];
+            }
+          }
+        }
+
         function shuffle(array){
           for(let i = array.length - 1; i > 0; i--){
             let j = Math.floor(Math.random() * (i + 1));
@@ -91,6 +99,7 @@
           var itemHTML = $('<div class="' + itemSelector + '">');
           var labelHTML = '';
               labelHTML += '<p class="' + labelSelector + '">';
+              labelHTML += '  <span class="count">' + data[idx].count + '<\/span>';
               labelHTML += '	<span class="text">' + data[idx].text + '<\/span>';
               labelHTML += '<\/p>';
 
@@ -110,7 +119,7 @@
           $roulette.children("." + itemSelector).eq(idx).children("." + labelSelector).css({
             //"height": textH + 'px',
             //"line-height": textH + 'px',
-            "transform": 'translateX(' + (textH * 1.3) + 'px) translateY(' + (wrapW * -.3) + 'px) rotateZ(' + (90 + d * .5) + 'deg)'
+            "transform": 'translateX(' + (textH * 1.6) + 'px) translateY(' + (wrapW * -.38) + 'px) rotateZ(' + (90 + d * .5) + 'deg)'
           });
 
         }
@@ -158,7 +167,12 @@
 })(jQuery);
 
 $(function() {
-
-  $('.box-roulette').roulette();
+  $.ajax({
+    url: 'https://sirla-web-api.herokuapp.com/get_count',
+    type: 'GET',
+    dataType: 'jsonp'
+  }).then(resp => {
+    $('.box-roulette').roulette(resp);
+  }) ;
 
 });
