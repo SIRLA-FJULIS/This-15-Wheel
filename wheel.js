@@ -1,7 +1,7 @@
 (function($) {
   $.fn.extend({
 
-    roulette: function(count, options) {
+    roulette: function(options) {
 
       var defaults = {
         angle: 0,
@@ -17,54 +17,78 @@
 
         var data = [
 					{
-            color: '#3f297e',
+            color: '#26c6da',
             text: '夜猫'
           },
           {
-            color: '#1d61ac',
+            color: '#b2dfdb',
             text: '土豆'
           },
           {
-            color: '#169ed8',
+            color: '#80cbc4',
             text: '統神'
           },
           {
-            color: '#209b6c',
+            color: '#4db6ac',
             text: 'arashi'
           },
           {
-            color: '#60b236',
+            color: '#26a69a',
             text: 'Yan'
           },
           {
-            color: '#efe61f',
+            color: '#aed581',
             text: '叔叔'
           },
           {
-            color: '#f7a416',
+            color: '#e6ee9c',
             text: 'UR🍐'
           },
           {
-            color: '#e6471d',
+            color: '#dce775',
             text: '許羊'
           },
           {
-            color: '#dc0936',
+            color: '#00acc1',
             text: '琪雅'
           },
           {
-            color: '#be107f',
+            color: '#0097a7',
             text: '🐟'
+          },
+          {
+            color: '#a5d6a7',
+            text: '辣母羊'
+          },
+          {
+            color: '#00b8d4',
+            text: 'kenny'
+          },
+          {
+            color: '#b2ebf2',
+            text: 'ㄇㄒ'
+          },
+          {
+            color: '#00bfa5',
+            text: 'smallant'
+          },
+          {
+            color: '#81c784',
+            text: '比斯'
+          },
+          {
+            color: '#a5d6a7',
+            text: 'cuboid'
           }
         ];
 
-        for(let c in count){
-          for(let d of data){
-            if(d.text === c) {
-              d.count = count[c];
-            }
-          }
-        }
+        // for(let c in count){
+        //   for(let d of data){
+        //     if(d.text === c) {
+        //       d.count = count[c];
+        //     }
+        //   }
+        // }
 
         function shuffle(array){
           for(let i = array.length - 1; i > 0; i--){
@@ -99,7 +123,7 @@
           var itemHTML = $('<div class="' + itemSelector + '">');
           var labelHTML = '';
               labelHTML += '<p class="' + labelSelector + '">';
-              labelHTML += '  <span class="count">' + data[idx].count + '<\/span>';
+              // labelHTML += '  <span class="count">' + data[idx].count + '<\/span>';
               labelHTML += '	<span class="text">' + data[idx].text + '<\/span>';
               labelHTML += '<\/p>';
 
@@ -119,7 +143,7 @@
           $roulette.children("." + itemSelector).eq(idx).children("." + labelSelector).css({
             //"height": textH + 'px',
             //"line-height": textH + 'px',
-            "transform": 'translateX(' + (textH * 1.6) + 'px) translateY(' + (wrapW * -.38) + 'px) rotateZ(' + (90 + d * .5) + 'deg)'
+            "transform": 'translateX(' + (textH * .7) + 'px) translateY(' + (wrapW * -.38) + 'px) rotateZ(' + (90 + d * .5) + 'deg)'
           });
 
         }
@@ -167,12 +191,13 @@
 })(jQuery);
 
 $(function() {
-  $.ajax({
-    url: 'https://sirla-web-api.herokuapp.com/get_count',
-    type: 'GET',
-    dataType: 'jsonp'
-  }).then(resp => {
-    $('.box-roulette').roulette(resp);
-  }) ;
+  $('.box-roulette').roulette();
+  // $.ajax({
+  //   url: 'https://sirla-web-api.herokuapp.com/get_count',
+  //   type: 'GET',
+  //   dataType: 'jsonp'
+  // }).then(resp => {
+  //   $('.box-roulette').roulette(resp);
+  // }) ;
 
 });
