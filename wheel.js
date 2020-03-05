@@ -17,67 +17,67 @@
 
         var data = [
 					{
-            color: '#26c6da',
+            color: '#FF6670',
             text: '夜猫'
           },
           {
-            color: '#b2dfdb',
+            color: '#FF6670',
             text: '土豆'
           },
           {
-            color: '#80cbc4',
+            color: '#FF6670',
             text: '統神'
           },
           {
-            color: '#4db6ac',
+            color: '#FF6670',
             text: 'arashi'
           },
           {
-            color: '#26a69a',
+            color: '#FF6670',
             text: 'Yan'
           },
           {
-            color: '#aed581',
+            color: '#FF6670',
             text: '叔叔'
           },
           {
-            color: '#e6ee9c',
+            color: '#FFD000',
             text: 'UR🍐'
           },
           {
-            color: '#dce775',
+            color: '#FFD000',
             text: '許羊'
           },
           {
-            color: '#00acc1',
+            color: '#FFD000',
             text: '琪雅'
           },
           {
-            color: '#0097a7',
+            color: '#FFD000',
             text: '🐟'
           },
           {
-            color: '#a5d6a7',
+            color: '#FFD000',
             text: '辣母羊'
           },
           {
-            color: '#00b8d4',
+            color: '#77A88D',
             text: 'kenny'
           },
           {
-            color: '#b2ebf2',
+            color: '#77A88D',
             text: 'ㄇㄒ'
           },
           {
-            color: '#00bfa5',
+            color: '#77A88D',
             text: 'smallant'
           },
           {
-            color: '#81c784',
+            color: '#77A88D',
             text: '比斯'
           },
           {
-            color: '#a5d6a7',
+            color: '#77A88D',
             text: 'cuboid'
           }
         ];
@@ -91,6 +91,7 @@
         }
 
         function shuffle(array){
+          color = ['#FF6670', '#FFD000', '77A88D'] ;
           for(let i = array.length - 1; i > 0; i--){
             let j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
@@ -192,7 +193,6 @@
 })(jQuery);
 
 $(function() {
-  $('.box-roulette').roulette();
   $.ajax({
     url: 'https://sirla-web-api.herokuapp.com/get_count',
     type: 'GET',
