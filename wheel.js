@@ -194,7 +194,7 @@
 $(function() {
   $('.box-roulette').roulette();
   $.ajax({
-    url: 'http://localhost:3000/get_count',
+    url: 'https://sirla-web-api.herokuapp.com/get_count',
     type: 'GET',
     dataType: 'jsonp'
   }).then(resp => {
