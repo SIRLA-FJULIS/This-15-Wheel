@@ -1,7 +1,7 @@
 (function($) {
   $.fn.extend({
 
-    roulette: function(options) {
+    roulette: function(count, options) {
 
       var defaults = {
         angle: 0,
@@ -82,13 +82,13 @@
           }
         ];
 
-        // for(let c in count){
-        //   for(let d of data){
-        //     if(d.text === c) {
-        //       d.count = count[c];
-        //     }
-        //   }
-        // }
+        for(let c in count){
+          for(let d of data){
+            if(d.text === c) {
+              d.count = count[c];
+            }
+          }
+        }
 
         function shuffle(array){
           for(let i = array.length - 1; i > 0; i--){
@@ -123,10 +123,11 @@
           var itemHTML = $('<div class="' + itemSelector + '">');
           var labelHTML = '';
               labelHTML += '<p class="' + labelSelector + '">';
-              // labelHTML += '  <span class="count">' + data[idx].count + '<\/span>';
+              labelHTML += '  <span class="count">' + data[idx].count + '<\/span>';
               labelHTML += '	<span class="text">' + data[idx].text + '<\/span>';
               labelHTML += '<\/p>';
 
+          // background of wheel
           $roulette.append(itemHTML);
           $roulette.children("." + itemSelector).eq(idx).append(labelHTML);
           $roulette.children("." + itemSelector).eq(idx).css({
@@ -138,12 +139,12 @@
             "transform": "rotate(" + rt + "deg)"
           });
 
-          var textH = parseInt(((2 * Math.PI * wrapW) / d) * .5);
+          var textH = parseInt(((2 * Math.PI * wrapW) / d) * .6);
 
           $roulette.children("." + itemSelector).eq(idx).children("." + labelSelector).css({
-            //"height": textH + 'px',
-            //"line-height": textH + 'px',
-            "transform": 'translateX(' + (textH * .7) + 'px) translateY(' + (wrapW * -.38) + 'px) rotateZ(' + (90 + d * .5) + 'deg)'
+            "height": textH + 'px',
+            "line-height": textH + 'px',
+            "transform": 'translateX(' + (textH * .98) + 'px) translateY(' + (wrapW * -.42) + 'px) rotateZ(' + (90 + d * .5) + 'deg)'
           });
 
         }
@@ -192,12 +193,12 @@
 
 $(function() {
   $('.box-roulette').roulette();
-  // $.ajax({
-  //   url: 'https://sirla-web-api.herokuapp.com/get_count',
-  //   type: 'GET',
-  //   dataType: 'jsonp'
-  // }).then(resp => {
-  //   $('.box-roulette').roulette(resp);
-  // }) ;
+  $.ajax({
+    url: 'http://localhost:3000/get_count',
+    type: 'GET',
+    dataType: 'jsonp'
+  }).then(resp => {
+    $('.box-roulette').roulette(resp);
+  }) ;
 
 });
