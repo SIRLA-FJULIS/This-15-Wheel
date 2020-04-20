@@ -30,7 +30,7 @@
           },
           {
             color: '#FF6670',
-            text: 'arashi'
+            text: 'Arashi'
           },
           {
             color: '#FF6670',
