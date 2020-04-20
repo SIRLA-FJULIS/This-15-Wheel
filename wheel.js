@@ -73,7 +73,6 @@
             text: 'smallant'
           },
           {
-          {
             color: '#77A88D',
             text: 'cuboid'
           }
