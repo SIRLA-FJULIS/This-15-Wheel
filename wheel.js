@@ -73,9 +73,6 @@
             text: 'smallant'
           },
           {
-            color: '#77A88D',
-            text: '比斯'
-          },
           {
             color: '#77A88D',
             text: 'cuboid'
