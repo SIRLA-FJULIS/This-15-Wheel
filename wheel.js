@@ -169,8 +169,14 @@
               var currentA = $(this).getRotateAngle() % 360;
               for(d of data){
                 if(360 - currentA > d.angle_range[0] && 360 - currentA < d.angle_range[1]){
-                  $("#result").text(`恭喜${d.text}，您已被幸運SIRLA喵造訪!`);
-                  break;
+                  if(d.text == '土豆') {
+                    $("#result").text(`${d.text}使用道具免死🥔! 重轉!!`);
+                    rotation();
+                    break;
+                  } else {
+                    $("#result").text(`恭喜${d.text}，您已被幸運SIRLA喵造訪!`);
+                    break;
+                  }
                 }
               }
 
