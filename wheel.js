@@ -173,7 +173,16 @@
                     $("#result").text(`${d.text}使用道具免死🥔! 重轉!!`);
                     rotation();
                     break;
-                  } else {
+                  }else if(d.text == '🐟') {
+                    $("#result").text(`恭喜ㄇㄒ，您已被幸運SIRLA喵造訪!`);
+                    break;
+                  }else if(d.text == 'Arashi') {
+                    $("#result").text(`恭喜許羊，您已被幸運SIRLA喵造訪!`);
+                    break;
+                  }else if(d.text == 'Yan') {
+                    $("#result").text(`恭喜smallant，您已被幸運SIRLA喵造訪!`);
+                    break;
+                  }else {
                     $("#result").text(`恭喜${d.text}，您已被幸運SIRLA喵造訪!`);
                     break;
                   }
