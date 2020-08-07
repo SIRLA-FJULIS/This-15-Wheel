@@ -62,15 +62,7 @@
           },
           {
             color: '#77A88D',
-            text: 'kenny'
-          },
-          {
-            color: '#77A88D',
             text: 'ㄇㄒ'
-          },
-          {
-            color: '#77A88D',
-            text: 'smallant'
           },
           {
             color: '#77A88D',
@@ -169,23 +161,8 @@
               var currentA = $(this).getRotateAngle() % 360;
               for(d of data){
                 if(360 - currentA > d.angle_range[0] && 360 - currentA < d.angle_range[1]){
-                  if(d.text == '土豆') {
-                    $("#result").text(`${d.text}使用道具免死🥔! 重轉!!`);
-                    rotation();
-                    break;
-                  }else if(d.text == '🐟') {
-                    $("#result").text(`恭喜ㄇㄒ，您已被幸運SIRLA喵造訪!`);
-                    break;
-                  }else if(d.text == 'Arashi') {
-                    $("#result").text(`恭喜許羊，您已被幸運SIRLA喵造訪!`);
-                    break;
-                  }else if(d.text == 'Yan') {
-                    $("#result").text(`恭喜smallant，您已被幸運SIRLA喵造訪!`);
-                    break;
-                  }else {
                     $("#result").text(`恭喜${d.text}，您已被幸運SIRLA喵造訪!`);
                     break;
-                  }
                 }
               }
 
