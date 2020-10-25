@@ -50,10 +50,6 @@
           },
           {
             color: '#FFD000',
-            text: '琪雅'
-          },
-          {
-            color: '#FFD000',
             text: '🐟'
           },
           {
@@ -63,10 +59,6 @@
           {
             color: '#77A88D',
             text: 'ㄇㄒ'
-          },
-          {
-            color: '#77A88D',
-            text: 'cuboid'
           }
         ];
 
