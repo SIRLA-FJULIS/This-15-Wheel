@@ -37,24 +37,12 @@
             text: 'Yan'
           },
           {
-            color: '#FF6670',
-            text: '叔叔'
-          },
-          {
-            color: '#FFD000',
-            text: 'UR🍐'
-          },
-          {
             color: '#FFD000',
             text: '許羊'
           },
           {
             color: '#FFD000',
             text: '🐟'
-          },
-          {
-            color: '#FFD000',
-            text: '辣母羊'
           },
           {
             color: '#77A88D',
