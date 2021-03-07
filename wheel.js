@@ -47,6 +47,12 @@
           {
             color: '#77A88D',
             text: 'ㄇㄒ'
+          },{
+            color: '#FFD000',
+            text: '再來一次'
+          },{
+            color: '#FFD000',
+            text: '再來一次'
           }
         ];
 
