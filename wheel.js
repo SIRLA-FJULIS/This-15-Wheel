@@ -47,14 +47,6 @@
           {
             color: '#77A88D',
             text: 'ㄇㄒ'
-          },
-          {
-            color: '#FF6670',
-            text: '土豆'
-          },
-          {
-            color: '#FF6670',
-            text: '土豆'
           }
         ];
 
