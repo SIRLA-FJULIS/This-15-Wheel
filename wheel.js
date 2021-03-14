@@ -16,17 +16,9 @@
         var o = opt;
 
         var data = [
-					{
-            color: '#FF6670',
-            text: '夜猫'
-          },
-          {
+					          {
             color: '#FF6670',
             text: '土豆'
-          },
-          {
-            color: '#FF6670',
-            text: '統神'
           },
           {
             color: '#FF6670',
@@ -35,10 +27,6 @@
           {
             color: '#FF6670',
             text: 'Yan'
-          },
-          {
-            color: '#FFD000',
-            text: '許羊'
           },
           {
             color: '#FFD000',
@@ -55,6 +43,10 @@
           {
             color: '#77A88D',
             text: '辣母羊'
+          },
+          {
+            color: '#77A88D',
+            text: '郭映嫻'
           }
 
         ];
@@ -122,7 +114,7 @@
           $roulette.children("." + itemSelector).eq(idx).children("." + labelSelector).css({
             "height": textH + 'px',
             "line-height": textH + 'px',
-            "transform": 'translateX(' + (textH * 1.75) + 'px) translateY(' + (wrapW * -.446) + 'px) rotateZ(' + (85 + d * .65) + 'deg)'
+            "transform": 'translateX(' + (textH * 2.45) + 'px) translateY(' + (wrapW * -.446) + 'px) rotateZ(' + (85 + d * .65) + 'deg)'
           });
 
         }
