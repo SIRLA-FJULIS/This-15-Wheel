@@ -37,7 +37,7 @@
             text: 'ㄇㄒ'
           },
           {
-            color: '#77A88D',
+            color: '#6FB7B7 ',
             text: '吳佳霓'
           },
           {
@@ -45,7 +45,7 @@
             text: '辣母羊'
           },
           {
-            color: '#77A88D',
+            color: '#6FB7B7 ',
             text: '郭映嫻'
           }
 
@@ -60,7 +60,6 @@
         }
 
         function shuffle(array){
-          color = ['#FF6670', '#FFD000', '77A88D'] ;
           for(let i = array.length - 1; i > 0; i--){
             let j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
