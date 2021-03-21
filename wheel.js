@@ -47,6 +47,10 @@
           {
             color: '#6FB7B7 ',
             text: '郭映嫻'
+          },
+          {
+            color: '#FF6670 ',
+            text: 'Cindy Lin'
           }
 
         ];
