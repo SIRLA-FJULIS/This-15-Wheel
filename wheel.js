@@ -121,7 +121,7 @@
           $roulette.children("." + itemSelector).eq(idx).children("." + labelSelector).css({
             "height": textH + 'px',
             "line-height": textH + 'px',
-            "transform": 'translateX(' + (textH * 1.75) + 'px) translateY(' + (wrapW * -.4455) + 'px) rotateZ(' + (85 + d * .65) + 'deg)'
+            "transform": 'translateX(' + (textH * 1.8) + 'px) translateY(' + (wrapW * -.44) + 'px) rotateZ(' + (85 + d * .65) + 'deg)'
           });
 
         }
