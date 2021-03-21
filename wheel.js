@@ -51,6 +51,10 @@
           {
             color: '#FF6670 ',
             text: 'Cindy Lin'
+          },
+          {
+            color: '#FF6670 ',
+            text: 'UR🍐'
           }
 
         ];
@@ -117,7 +121,7 @@
           $roulette.children("." + itemSelector).eq(idx).children("." + labelSelector).css({
             "height": textH + 'px',
             "line-height": textH + 'px',
-            "transform": 'translateX(' + (textH * 2.175) + 'px) translateY(' + (wrapW * -.446) + 'px) rotateZ(' + (85 + d * .65) + 'deg)'
+            "transform": 'translateX(' + (textH * 1.75) + 'px) translateY(' + (wrapW * -.446) + 'px) rotateZ(' + (85 + d * .65) + 'deg)'
           });
 
         }
